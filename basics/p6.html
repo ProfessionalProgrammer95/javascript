@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>use switch key = add,sub,mul,div,rem a and b </h1>
+    <button onclick="codeHandler()" value="">Execute code</button>
+    <script>
+        function codeHandler(){
+            var key = prompt('enter any one an opertion value add,sub,mul,div,mod?');
+            var a = prompt('enter value of a?');
+            var b = prompt('enter value of b?');
+                //constructor - Number, Boolean, String, Array, object
+            var x = Number(a);
+            var y = Number(b);
+            var res = 0;
+            switch(key){
+                case "add":
+                    res = x + y;
+                    document.write(`<h1> Addition of a and b is = ${res} </h1>`);
+                    break; 
+                
+                case "sub":
+                    res = x- y;
+                    document.write(`<h1> Subtraction of a and b is = ${res} </h1>`);
+                    break;
+                case "mul":
+                    res = x * y;
+                    document.write(`<h1> multiplication of a and b is = ${res} </h1>`);
+                    break;
+                case "div":
+                    if(x > y){
+                        res = x / y;
+                    }else{
+                        res = y/ x;
+                    }
+                    document.write(`<h1> division of a and b is =${res}</h1>`);
+                    break;
+                case "mod":
+                    if(x > y){
+                        res = x % y;
+                    }else{
+                        res = y % x;
+                    }
+                    document.write(`<h1> modulo of a and b is = ${res}</h1>`);
+                default:
+                    document.write(`<h1> check the input </h1>`);    
+            }
+        }
+    </script>
+</body>
+</html>

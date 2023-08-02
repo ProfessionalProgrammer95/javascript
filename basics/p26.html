@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>area of the circle</h3>
+    <form onsubmit="submitHandler(event)" method="post">
+    <div class="form-group">
+        <label for="radius">Radius</label>
+        <input type="number" name="rad" id="rad" required>
+    </div>
+    <div>
+        <h1>Area of the circle</h1>
+    </div>
+    <div class="btn">
+        <input type="submit" value="Calculate" required>
+        <input type="reset" value="reset" required>
+    </div>
+</form>
+    <div id="result"></div>
+<script>
+    var rad = document.getElementById('rad');
+    var res = document.getElementById('result');
+
+    function submitHandler(event){
+        event.preventDefault();
+        console.log('rad =', rad.value);
+        var x = Number(rad.value);
+
+        var out = 3.142 * x * x;
+
+        res.innerHTML = `<h1> Area of the circle = ${out} </h1>`;
+    }
+
+</script>
+</body>
+</html>

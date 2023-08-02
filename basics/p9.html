@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Days</h1>
+    <!-- <select name="days" id="days" onsubmit="codeHandler()" >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+    </select> -->
+    <form action="" onsubmit="codeHandler()">
+        <div>
+            <label for="">Enter the number?</label>
+            <input type="number" name="number" id="number" required>
+        </div>
+        <div>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+    <script>
+        function codeHandler(event){
+            var key = prompt('enter any number 1 to 7');
+       
+        switch(key){
+            case "1":
+                    document.write(`<h1> 1 is Sunday </h1>`);
+                break;
+            case "2":
+                    document.write(`<h1> 2 is Monday </h1>`);
+                break;
+            case "3":
+                    document.write(`<h1> 3 is Tuesday </h1>`);
+                break;
+            case "4":
+                    document.write(`<h1> 4 is Wednesday </h1>`);
+                break;
+            case "5":
+                    document.write(`<h1> 5 is Thursday</h1>`);
+                break;
+            case "6":
+                    document.write(`<h1> 6 is Friday </h1>`);
+                break;
+            case "7":
+                    document.write(`<h1> 7 is Saturday </h1>`);
+            default:
+                document.write(`<h1>Number of days are only 7</h1>`);
+        }
+    }
+    </script>
+
+</body>
+</html>
