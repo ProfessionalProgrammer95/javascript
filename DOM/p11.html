@@ -14,12 +14,12 @@
         function openHandler() {
             /*alias for window.open()*/
             webStats = open('https://github.com', 'sample window', 'width=200px;height=300px;');// open in new window
-            //webStats = window.open('https://github.com'); //to open in new tab
+            // webStats = window.open('https://github.com'); //to open in new tab
             document.write('wait for 5sec')
             
             setTimeout(() => {
                 webStats.close()
-            },5000);
+            },50000);
         }
         function closeHandler(){
             console.log('webStats =', webStats)

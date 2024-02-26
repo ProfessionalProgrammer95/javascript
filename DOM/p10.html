@@ -7,40 +7,66 @@
 </head>
 <body>
     <h1>document.cookie</h1>
-    <h1 id="result"></h1>
+    
     <button onclick="set()">Set cookies</button>
-    <button onclick="clearHandler()">clear cookie</button>
+    <button onclick="resetCookies()">clear cookie</button>
+
+    <h1 id="output"></h1>
+
+
     <script> 
     function set(){
-        var x = prompt('enter your input');
-            document.cookie = `userId=${x};expires=8 AUG 2023 12:00:00 AM GMT+5.30`;
+        // var x = prompt('enter your input');
+        var x = "be-practical";
+            document.cookie = `userId=${x};expires=5 Jan 2024  10:58:00 AM GMT+5.30`;
             alert("cookies successfully set");
             window.location.reload();//refreshing current page
     }
     //clear cookie
-    function clearHandler(){
-        if(confirm(`Are you sure to clear cookie`)){
-            let myTime = new Date();
-            myTime.setTime(myTime.getTime()-1);
+    function resetCookies(){
+        if(confirm(`Are you sure to clear cookie?`)){
+            let myTime = new Date(); /// current date and time
             console.log('myTime', myTime.toGMTString());
 
-            document.cookie = `userId=;expires=${myTime.tpGMTString()}`;
+
+            myTime.setTime(myTime.getTime()-1);
+            
+
+            document.cookie = `userId=;expires=${myTime.toGMTString()}`;
             alert('cookie cleared successfully');
             window.location.reload();//page refresh current active page
         }else{
-            console.log('failed');
+            return ;
+            // console.log('failed');
         }
     }
+
+
+    /* self constructor / Anonymous function
+        (function() {
+        }) () 
+        function name () {}
+        name();
+    */
+
+    // userId-be-practical
+
+
     //self trigger function
     (function(){
-        console.log(document.cookie);// string 
-        let res = document.cookie.split("=");//break string into arrays
-        console.log('res =',res);
-        console.log('res[0] =', res[0]);
-        console.log('res[1] =', res[1]);
-        document.getElementById('result').innerText = `key = ${re[0]} and value = ${res[1]}`;
-    })();
-    
+        //self constructor function
+        console.log(document.cookie);  // cookie var =value
+
+        const res = document.cookie.split("=");//break string into arrays
+        console.log('result =',res);  // ["userId", "Bepractical"]
+
+        if(res[1]) {
+            document.getElementById("output").innerText = `cookie ${res[0]} = ${res[1]}`;
+        } else {
+            document.getElementById("output").innerText = "no cookie set";
+        }
+    }) ();
+        
 
     </script>
 </body>

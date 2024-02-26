@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt{
+            background-color: teal;
+            color: #fff;
+            padding: 12px;
+            width: 50%;
+            height: 500px;
+            overflow: auto;
+        }
+        h4{
+            padding: 10px;
+            background-color: crimson;
+            color:#ffff;
+
+        }
+    </style>
+</head>
+<body>
+    <h3>onmousewheel() - deprecated and onscroll()</h3>
+
+    <h4 id="output"></h4>
+    <div id="txt" onmousewheel="wheelHandler()" onscroll="wheelHandler()">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus aliquid reiciendis dolor. Magnam, sed voluptate tempore aliquid eaque modi voluptatum quam ipsum officiis tenetur distinctio, perspiciatis quia. Repellendus, optio nesciunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius corrupti unde cum magni commodi facilis maiores at maxime, quaerat, beatae iste explicabo excepturi? Cupiditate, delectus. Dolor ipsum nisi sit et!Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus eum obcaecati sit. Ipsa omnis, exercitationem provident impedit dolores distinctio natus voluptates veritatis soluta asperiores dicta quo sequi incidunt maxime accusamus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit possimus architecto perspiciatis labore placeat vel. Saepe aperiam perspiciatis, delectus perferendis vel explicabo ea, expedita nesciunt eos assumenda quae quod tempore.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quo fuga impedit quas nam recusandae! Velit dignissimos alias quod quibusdam sapiente, tempora necessitatibus iusto facilis pariatur laborum excepturi odio quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti cumque repellendus quis debitis id modi placeat dolorum velit cum sequi totam commodi animi iste expedita perferendis ab quod, numquam eum.lorem Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia sequi amet facere officiis, impedit nam delectus dolore excepturi tempore distinctio rem, nostrum tempora eos eum. Aliquid corporis esse quam obcaecati! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, minus perferendis. Quos possimus repellendus consectetur suscipit quisquam sapiente, eos iste, exercitationem maiores quam beatae debitis molestias? Aperiam natus perspiciatis eos!
+        </p>
+    </div>
+
+    <script>
+        function wheelHandler(){
+             var pos = document.getElementById("txt");
+             document.getElementById("output").innerHTML = pos.scrollTop + "px";
+        }
+    </script>
+</body>
+</html>
